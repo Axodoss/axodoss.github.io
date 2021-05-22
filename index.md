@@ -16,6 +16,51 @@
 
 ---
 
+## Notes on Frame Rate Independent Update in Game Engines
+
+```c
+last_time = Time();
+accumulated_time = 0;
+
+while (1)
+{
+	current_time = Time();
+	accumulated_time += current_time - last_time;
+	last_time = current_time;
+
+	while (accumulated_time >= FRAME_TIME)
+	{
+		UpdateGame();
+		accumulated_time -= FRAME_TIME;
+	}
+
+	Render();
+}
+/*
+     --------------------- Time ------------------>
+
+    Scenario 1: UpdateGame() is called twice and a small gap of time is left
+                resulting in a visual hack every few frames.
+     ----------------------------------------------
+     |   UpdateGame()   |   UpdateGame()   |      |
+     ----------------------------------------------
+     |                  Render()                  |
+     ----------------------------------------------
+
+	Scenario 2: UpdateGame() takes to long resulting in that 'accumulated_time' is 
+	            larger and larger for each frame.
+     --------------------------------------------------
+     |                UpdateGame()                    | <-- UpdateGame() takes longer than FRAME_TIME
+     --------------------------------------------------
+     |                  Render()                  |
+     ----------------------------------------------
+*/
+```
+
+---
+
+---
+
 ## Notes on Building an Streamable Asset System for Game Engines
 
 ---
