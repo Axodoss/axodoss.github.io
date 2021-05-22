@@ -1,3 +1,21 @@
+## Notes on Game Engine Components
+
+**High Level Components**
+* **Asset System** - _responsible for loading and managing assets like fonts, textures, etc._
+* **Rendering System** - _responsible for rendering the game world, all the 2D and 3D assets._
+* **Audio System**
+* **Physics System**
+* **Interaction System**
+
+
+**Low Level Components**
+* **Thread Manager** - _responsible for the thread pool and memory exchange._
+* **File Manager** - _responsible for file I/O including packaged files._
+
+---
+
+---
+
 ## Notes on Building an Streamable Asset System for Game Engines
 
 ---
