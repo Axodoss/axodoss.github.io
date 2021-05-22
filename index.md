@@ -47,10 +47,10 @@ while (1)
      |                  Render()                  |
      ----------------------------------------------
 
-	Scenario 2: UpdateGame() takes to long resulting in that 'accumulated_time' is 
-	            larger and larger for each frame.
+	Scenario 2: UpdateGame() takes longer than FRAME_TIME to completeresulting
+	            in that 'accumulated_time' is larger and larger for each frame.
      --------------------------------------------------
-     |                UpdateGame()                    | <-- UpdateGame() takes longer than FRAME_TIME
+     |                UpdateGame()                    |
      --------------------------------------------------
      |                  Render()                  |
      ----------------------------------------------
@@ -62,8 +62,6 @@ while (1)
 ---
 
 ## Notes on Building an Streamable Asset System for Game Engines
-
----
 
 ### Interface of the Streamable Asset System
 
