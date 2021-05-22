@@ -37,18 +37,22 @@ while (1)
 	Render();
 }
 /*
-  --------------------- Time ------------------>
-
- Scenario 1: UpdateGame() is called twice and a small gap of time is left
-             resulting in a visual hack every few frames.
+ Scenario 1: UpdateGame() is called twice and a small gap of time
+             is left resulting in a visual hack every few frames.
+  
+  ----------------- Frame Time ---------------->
   ----------------------------------------------
-  |   UpdateGame()   |   UpdateGame()   |      |
+  |   UpdateGame()   |   UpdateGame()   | **** |
   ----------------------------------------------
   |                  Render()                  |
   ----------------------------------------------
 
- Scenario 2: UpdateGame() takes longer than FRAME_TIME to completeresulting
-	         in that 'accumulated_time' is larger and larger for each frame.
+
+ Scenario 2: UpdateGame() takes longer than FRAME_TIME to complete
+             resulting in that 'accumulated_time' is larger and
+             larger for each frame.
+  
+  ----------------- Frame Time ---------------->
   --------------------------------------------------
   |                UpdateGame()                    |
   --------------------------------------------------
