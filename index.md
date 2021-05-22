@@ -1,8 +1,10 @@
-## Notes on Building an Asset System for Game Engines
+## Notes on Building an Streamable Asset System for Game Engines
 
-### Streamable Asset Interface for Game Engines
+---
 
-#### Public Interface
+### Interface of the Streamable Asset System
+
+**Public Interface**
 ```c
 /**
  * Allocates an AssetId and puts the asset on the loading queue.
@@ -37,11 +39,11 @@ void Unload(AssetId id);
 
 ---
 
-### Using Asset Manifest for Game Engine
+### Using Asset Manifest
 
 Using a manifest file (or files) allows for a cleaner public interface but requires us to create a manifest of sort that contains all the nessecarry parameters to create the asset.
 
-#### manifest.json
+**manifest.json**
 ```json
 [
 	{
@@ -70,11 +72,21 @@ Using a manifest file (or files) allows for a cleaner public interface but requi
 ]
 ```
 
-#### Public Interface
+**Public Interface**
 ```c
 /**
  * Allocates an AssetId and puts the asset on the loading queue.
  */
 AssetId Load(string name);
+
+bool IsReady(AssetId id);
+
+void Unload(AssetId id);
 ```
+
+---
+
+### Private Interface of the Asset System
+_TODO_
+
 ---
