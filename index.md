@@ -6,11 +6,12 @@
 * **Audio System**
 * **Physics System**
 * **Interaction System**
-
+* **Common** - _common functions like Exit, Date, Time, Load/Unload Module, etc._
 
 **Low Level Components**
 * **Thread Manager** - _responsible for the thread pool and memory exchange._
 * **File Manager** - _responsible for file I/O including packaged files._
+* **Core** - _low level functions like String Lengt, Math, Encoding, Compression, etc._
 
 ---
 
