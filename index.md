@@ -1,16 +1,26 @@
-## Notes on Game Engine Components
+## Notes on Game Engine Compontents
 
-**High Level Components**
+* **Engine (executable)** - _main program that loads all other components._
+* **Game (dynamic library)** - _contains the game code._
+
+---
+
+---
+
+## Notes on Game Engine Modules
+
+**High Level Modules**
 * **Asset System** - _responsible for loading and managing assets like fonts, textures, etc._
 * **Rendering System** - _responsible for rendering the game world, all the 2D and 3D assets._
-* **Audio System**
-* **Physics System**
-* **Interaction System**
-* **Common** - _common functions like Exit, Date, Time, Load/Unload Module, etc._
+* **Audio System** - _responsible for playing sound._
+* **Physics System** - _handles physics and collision._
+* **Variable System** - _query, change and register dynamic or static variables._
+* **Platform** - _common functions like: Exit, Printf, Date, Time, Load/Unload Module, Events, etc._
 
-**Low Level Components**
+**Low Level Modules**
 * **Thread Manager** - _responsible for the thread pool and memory exchange._
 * **File Manager** - _responsible for file I/O including packaged files._
+* **Memory Manager** - _manage per-frame memory, transient and persistant memory._
 * **Core** - _low level functions like String Lengt, Math, Encoding, Compression, etc._
 
 ---
